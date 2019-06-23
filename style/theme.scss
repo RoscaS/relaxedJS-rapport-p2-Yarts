@@ -1,0 +1,308 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans";
+@import "https://fonts.googleapis.com/css?family=Montserrat";
+@import "https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap";
+
+@import "https://fonts.googleapis.com/css?family=Nova+Mono&display=swap";
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css";
+@import "https://afeld.github.io/emoji-css/emoji.css";
+@import "hybrid-hljs-theme.scss";
+
+@import "https://fonts.googleapis.com/css?family=Special+Elite";
+
+// $primary_color: #b4588c;
+// $primary_color: #f92672;
+$primary_color: #7189bf;
+$page-width: 17cm;
+
+
+@page {
+  margin: 2cm 1cm 2cm 0cm;
+}
+html {
+  // padding-left: 2cm;
+  // padding-right: 2cm;
+  padding: 0 4cm 0cm 4cm;
+  font-family: "Lato";
+  font-size: 18px;
+}
+body {
+  margin-left: 1cm;
+  counter-reset: h2;
+  font-size: 18px;
+}
+#title {
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+img {
+  border-radius: 10px;
+}
+
+pre code {
+  font-family: "Nova Mono", monospace;
+}
+
+.summary {
+  background-color: lighten($primary_color, 33%);
+}
+
+.ver-img {
+  width: 700px;
+  // position: relative;
+  // margin-top: - 400px !important;
+  // top: 0 !important;
+}
+
+.diag-caption {
+  border: 1px solid #ccc !important;
+  margin-left: 8.75cm;
+  padding: 5px;
+}
+
+blockquote {
+  font-family: 'Special Elite', cursive;
+  z-index: -1;
+	// font-weight: 100;
+	// font-size: 2rem;
+	// max-width: 600px;
+	// line-height: 1.4;
+	position: relative;
+	margin: 0;
+	padding: .5rem;
+}
+
+blockquote:before,
+blockquote:after {
+	position: absolute;
+	color: #f1efe6;
+	font-size: 8rem;
+	width: 4rem;
+	height: 4rem;
+}
+
+blockquote:before {
+	content: '“';
+	left: -4rem;
+	top: 2rem;
+}
+
+blockquote:after {
+	content: '”';
+	right: -4rem;
+	bottom: -6rem;
+}
+
+
+
+h2, h3, h4, h5, h6 {
+  // color: #df7599;
+  // color: #7189bf;
+  color: #874250;
+  z-index: 1;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h3 {
+  counter-reset: h4;
+}
+
+h2 {
+  font-size: 1.8em;
+  counter-reset: h3;
+}
+
+h2:before {
+  counter-increment: h2;
+  content: counter(h2) ". ";
+}
+
+h3:before {
+  counter-increment: h3;
+  content: counter(h2) "." counter(h3) ". ";
+}
+
+h4:before {
+  // color: #444;
+  // font-weight: bolder;
+  counter-increment: h4;
+  content: counter(h2) "." counter(h3) "." counter(h4) ". ";
+}
+
+h2.no-count:before,
+h3.no-count:before,
+h4.no-count:before {
+  content: "";
+  counter-increment: none;
+}
+
+
+p {
+  line-height: 1.5em;
+  font-size: 1.1em !important;
+  text-align: justify;
+  z-index: 1;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+$sidebar-width: 0.30in;
+$sidebar-height: 943px;
+
+.report-sidebar {
+  position: fixed;
+  left: -$sidebar-width;
+  top: 0;
+  width: $sidebar-width;
+  height: $sidebar-height;
+  writing-mode: vertical-rl;
+  border-top: $sidebar-width solid transparent;
+  // border-left: $sidebar-width solid lighten($primary_color, 10%);
+  border-left: $sidebar-width solid lighten($primary_color, 0%);
+  border-bottom: $sidebar-width solid transparent;
+  p {
+    text-align: center;
+    color: lighten($primary_color, 30%);
+    margin-top: -1.55em;
+    word-spacing: 10px;
+  }
+}
+
+ul {
+  li {
+    font-size: 1.1em;
+  }
+}
+
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+
+table th[align="center"],
+table td[align="center"] {
+  text-align: center;
+}
+
+table th[align="right"],
+table td[align="right"] {
+  text-align: right;
+}
+
+table tbody tr:last-child th,
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.block-center {
+  display: block;
+  margin: 0 auto;
+}
+
+.mermaid-svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  .node {
+    rect {
+      fill: none;
+      rx: 5px;
+      ry: 5px;
+      stroke: black;
+    }
+  }
+  .edgelabel {
+    background: white;
+    color: #444;
+  }
+}
+
+.message,
+figure {
+  page-break-inside: avoid;
+}
+
+.message {
+  margin-bottom: 1em !important;
+}
+
+figure {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  & > .panel {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    & > .label {
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  &.float-left {
+    margin-left: -1em !important;
+    margin-right: 2em !important;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    float: left;
+  }
+  figcaption {
+    font-size: 0.75em;
+    text-align: justify;
+    width: 100%;
+    margin-top: 1em;
+    & > .reference,
+    .title {
+      font-weight: bold;
+
+      display: inline;
+      margin-right: 0.5em;
+    }
+    & > .reference {
+      color: darken($primary_color, 50%);
+      &::after {
+        content: ": ";
+      }
+    }
+    & > .title {
+      color: darken($primary_color, 40%);
+    }
+    & > .caption {
+      display: inline;
+    }
+  }
+}
+
+@for $i from 1 to 20 {
+  .width-#{$i}cm {
+    width: #{10 * $i}mm !important;
+  }
+}
+@for $i from 1 to 20 {
+  .top-#{$i}mm {
+    margin-top: #{$i}mm;
+  }
+}
